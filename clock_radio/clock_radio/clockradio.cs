@@ -29,6 +29,7 @@ namespace clock_radio
         {
             Console.WriteLine("Please enter the time.");
             time = Console.ReadLine();
+            Console.WriteLine("You set the time to: "+ time);
             return time;
            
         }
@@ -41,7 +42,18 @@ namespace clock_radio
             {
                Console.WriteLine("What time would you like to set your alarm?");
                 setTime = Console.ReadLine();
+                Console.WriteLine("You set your alarm to: "+ setTime);
                 return setTime;
+            }
+            else if (alarm == "no")
+            {
+                Console.WriteLine("The alarm is off");
+            }
+            else
+            {
+                Console.WriteLine("That was not a valid input. Please press enter to continue.");
+                Console.ReadLine();
+                SetAlarm();
             }
             return alarm;
         }
@@ -54,7 +66,18 @@ namespace clock_radio
             {
                 Console.WriteLine("What station would you like?");
                 setRadioStation = Console.ReadLine();
+                Console.WriteLine("You set the radio station to: " + setRadioStation);
                 return setRadioStation;
+            }
+            else if (radioStation == "no")
+            {
+                Console.WriteLine("The radio is off.");
+            }
+            else
+            {
+                Console.WriteLine("That was not a valid input. Please press enter to continue.");
+                Console.ReadLine();
+                SetRadioStation();
             }
             return radioStation;
         }

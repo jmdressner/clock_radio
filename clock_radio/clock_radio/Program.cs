@@ -10,15 +10,16 @@ namespace clock_radio
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Please hit the enter key to continue through this program.");
+            Console.ReadLine();
             ClockRadio myRadio = new ClockRadio();
             myRadio.GetTime();
-            //Console.WriteLine(myRadio.time);
             Console.ReadLine();
             myRadio.SetAlarm();
-            //Console.WriteLine(myRadio.alarm);
             Console.ReadLine();
             myRadio.SetRadioStation();
-            //Console.WriteLine(myRadio.radioStation);
+            Console.ReadLine();
+            Console.WriteLine("You have reached the end of this program.  Thank you for your time.");
             Console.ReadLine();
         }
     }
