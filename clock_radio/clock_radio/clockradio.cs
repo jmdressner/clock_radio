@@ -13,6 +13,7 @@ namespace clock_radio
         public string time;
         public string alarm;
         public string setTime;
+        public string setAlarmTime;
         public string radioStation;
         public string setRadioStation;
 
@@ -27,11 +28,26 @@ namespace clock_radio
 
         public string GetTime()
         {
-            Console.WriteLine("Please enter the time.");
-            time = Console.ReadLine();
-            Console.WriteLine("You set the time to: "+ time);
+            Console.WriteLine("Would you like to change the time? Please enter 'Yes' or 'No'.");
+            time = Console.ReadLine().ToLower();
+            if (time == "yes")
+            {
+                Console.WriteLine("What time would you like to change the time to?");
+                setTime = Console.ReadLine();
+                Console.WriteLine("You set the time to: " + setTime);
+                return setTime;
+            }
+            else if (time == "no")
+            {
+                Console.WriteLine("You did not change the time.  The date and time is still: " + DateTime.Now);
+            }
+            else
+            {
+                Console.WriteLine("That was not a valid input. Please press enter to continue.");
+                Console.ReadLine();
+                GetTime();
+            }
             return time;
-           
         }
        
         public string SetAlarm()
@@ -41,9 +57,9 @@ namespace clock_radio
             if (alarm == "yes")
             {
                Console.WriteLine("What time would you like to set your alarm?");
-                setTime = Console.ReadLine();
-                Console.WriteLine("You set your alarm to: "+ setTime);
-                return setTime;
+                setAlarmTime = Console.ReadLine();
+                Console.WriteLine("You set your alarm to: "+ setAlarmTime);
+                return setAlarmTime;
             }
             else if (alarm == "no")
             {

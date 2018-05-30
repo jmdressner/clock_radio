@@ -10,7 +10,9 @@ namespace clock_radio
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("This is the Clock Radio Program.");
             Console.WriteLine("Please hit the enter key to continue through this program.");
+            Console.WriteLine("The date and time is: " + DateTime.Now);
             Console.ReadLine();
             ClockRadio myRadio = new ClockRadio();
             myRadio.GetTime();
